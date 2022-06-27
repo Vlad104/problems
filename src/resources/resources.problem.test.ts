@@ -41,10 +41,40 @@ describe("Resources", () => {
     expect(result).toStrictEqual(expected);
   });
 
-  it("float values", () => {
+  it("not strict distribution", () => {
     const resources = [100, 300, 200];
     const capacity = 121;
-    const expected = [20, 60, 40];
+    const expected = [21, 60, 40];
+
+    const result = resourcesProblem(resources, capacity);
+
+    expect(result).toStrictEqual(expected);
+  });
+
+  it("not strict distribution", () => {
+    const resources = [1, 1, 1];
+    const capacity = 1;
+    const expected = [1, 0, 0];
+
+    const result = resourcesProblem(resources, capacity);
+
+    expect(result).toStrictEqual(expected);
+  });
+
+  it("not strict distribution", () => {
+    const resources = [1, 10, 10];
+    const capacity = 5;
+    const expected = [1, 2, 2];
+
+    const result = resourcesProblem(resources, capacity);
+
+    expect(result).toStrictEqual(expected);
+  });
+
+  it("not strict distribution", () => {
+    const resources = [0, 100, 100, 10];
+    const capacity = 20;
+    const expected = [0, 10, 10, 0];
 
     const result = resourcesProblem(resources, capacity);
 
